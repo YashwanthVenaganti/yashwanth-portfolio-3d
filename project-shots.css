@@ -5,6 +5,8 @@
 .project-visual .browser,.project-visual .dashboard,.project-visual .learning,.project-visual .recruit-card{display:none}
 
 
+
+
 /* Responsive pinned project stack */
 @media(min-width:801px){.projects{display:grid;grid-template-columns:1fr;gap:0}.project{position:sticky;top:88px;min-height:470px;margin-bottom:24px}.project-one{z-index:1}.project-two{z-index:2}.project-three{z-index:3}.project-four{z-index:4}.project-visual{position:relative;height:430px;min-height:430px;overflow:hidden}}
 @media(max-width:800px){.projects{display:block;padding-top:8px}.project{position:sticky;top:var(--stack-top,72px);display:grid;grid-template-columns:1fr;min-height:0;margin:0 0 24vh;padding:8px;border-radius:15px}.project-one{--stack-top:72px;z-index:1}.project-two{--stack-top:84px;z-index:2}.project-three{--stack-top:96px;z-index:3}.project-four{--stack-top:108px;z-index:4}.project-visual{height:260px;min-height:260px}.project-info{padding:20px 14px}}
