@@ -1,0 +1,15 @@
+import fs from 'node:fs/promises';
+import {Workbook,SpreadsheetFile} from '@oai/artifact-tool';
+const outDir='C:/Users/Yashwanth/Documents/Codex/2026-10-18/g/outputs';
+const wb=Workbook.create(); const ws=wb.worksheets.add('Contact');
+ws.getRange('A1:B1').merge(); ws.getRange('A1').values=[['Yashwanth Venaganti | Contact']];
+ws.getRange('A2:B2').values=[['Field','Details']];
+ws.getRange('A3:B8').values=[['Name','Yashwanth Venaganti'],['Location','Hyderabad, Telangana, India'],['Email','venagantiyashwanth@gmail.com'],['Phone','+91 8688813480'],['LinkedIn','https://www.linkedin.com/in/yashwanthvenaganti/'],['Portfolio','https://yashwanthvenaganti.github.io/Portfolio/']];
+ws.getRange('A10:B10').merge(); ws.getRange('A10').values=[['Source: Yashwanth_Venaganti_Java_Full_Stack_Developer_2Y_Experience.pdf']];
+ws.getRange('A1:B1').format={fill:'#14221b',font:{name:'Arial',size:16,bold:true,color:'#e8f1df'}};
+ws.getRange('A2:B2').format={fill:'#c7ef67',font:{name:'Arial',bold:true,color:'#172016'}};
+ws.getRange('A3:B8').format={font:{name:'Arial',size:11,color:'#242820'},wrapText:true};
+ws.getRange('A:A').format.columnWidth=22; ws.getRange('B:B').format.columnWidth=48;
+ws.getRange('A10:B10').format={font:{name:'Arial',size:9,italic:true,color:'#666666'}};
+const png=await wb.render({sheetName:'Contact',range:'A1:B10',scale:2,format:'png'}); await fs.writeFile(`${outDir}/contact-preview.png`,new Uint8Array(await png.arrayBuffer()));
+const x=await SpreadsheetFile.exportXlsx(wb); await x.save(`${outDir}/Yashwanth_Contact_Details.xlsx`);
