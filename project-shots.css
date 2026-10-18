@@ -12,6 +12,8 @@ html,body{background:#f7f8fb;color:#171c29}body{background:#f7f8fb!important;col
 @media(max-width:540px){.project{margin-bottom:24vh}.project-visual{height:235px;min-height:235px}.project-info{padding:17px 12px}.project-info h3{font-size:19px}}
 
 
+
+
 /* Project gallery layout: balanced split cards on desktop, compact cards on phones. */
 .projects{display:flex;flex-direction:column;align-items:center;gap:20px}
 .project{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);align-items:stretch;gap:0;width:min(100%,1080px);min-height:420px;margin:0 auto 24px;padding:12px;border:1px solid #e2e7f0;border-radius:20px;background:#fff;color:#171c29;text-decoration:none;box-shadow:0 18px 48px #1d294014;overflow:hidden}
@@ -29,3 +31,7 @@ html,body{background:#f7f8fb;color:#171c29}body{background:#f7f8fb!important;col
 @media(min-width:801px){.project{position:sticky;top:88px}.project-two{top:100px}.project-three{top:112px}.project-four{top:124px}}
 @media(max-width:800px){.projects{gap:0;padding-top:8px}.project{grid-template-columns:1fr;width:100%;min-height:0;margin:0 auto 25vh;padding:8px;border-radius:16px}.project-one{top:72px}.project-two{top:84px}.project-three{top:96px}.project-four{top:108px}.project-visual{height:220px;min-height:220px}.project-shot{object-position:center 25%}.project-info{grid-template-columns:minmax(0,1fr) auto;gap:15px 10px;padding:20px 14px}.project-info p{font-size:13px}.project-info .tags span{font-size:9px;padding:6px 9px}}
 @media(max-width:540px){.project{margin-bottom:24vh}.project-visual{height:205px;min-height:205px}.project-info{padding:18px 12px}.project-info h3{font-size:20px}}
+
+
+/* Keep category labels out of the live page content. */
+.project-visual>.visual-tag{left:auto;right:14px;top:14px;bottom:auto}
